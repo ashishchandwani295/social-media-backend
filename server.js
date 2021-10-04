@@ -1,9 +1,10 @@
 const { ApolloServer } = require('apollo-server')
 const mongoose = require('mongoose')
+require('dotenv').config()
 
 const resolvers = require('./graphql/resolvers')
 const typeDefs = require('./graphql/typeDefs')
-const { MONGODB } = require('./config')
+const MONGODB = process.env.MONGODB
 
 const server = new ApolloServer({
     typeDefs,
